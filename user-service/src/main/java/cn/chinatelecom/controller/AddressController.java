@@ -1,6 +1,13 @@
 package cn.chinatelecom.controller;
 
 
+import cn.chinatelecom.enums.BizCodeEnum;
+import cn.chinatelecom.models.AddressVO;
+import cn.chinatelecom.service.AddressService;
+import cn.chinatelecom.util.JsonData;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2024-06-11
  */
 @RestController
-@RequestMapping("/addressDO")
+@RequestMapping("/api/address/v1/")
 public class AddressController {
-
+    @Autowired
+    private AddressService addressService;
+    @GetMapping("find/{address_id}")
+    public JsonData<AddressVO> detail(@PathVariable("address_id") Long id){
+        AddressVO addressvO = addressService.detail(id);
+        return addressvO!=null ?JsonData.buildSuccess(addressvO):JsonData.buildResult(BizCodeEnum.ADDRESS_NOT_EXIST);
+    }
 }
 
