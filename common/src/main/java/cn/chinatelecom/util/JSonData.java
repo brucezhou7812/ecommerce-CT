@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class JsonData<T> {
+public class JSonData<T> {
 
     /**
      * 状态码 0 表示成功
@@ -31,8 +31,8 @@ public class JsonData<T> {
      *
      * @return
      */
-    public static JsonData buildSuccess() {
-        return new JsonData(0, null, null);
+    public static JSonData buildSuccess() {
+        return new JSonData(0, null, null);
     }
 
     /**
@@ -41,8 +41,8 @@ public class JsonData<T> {
      * @param data
      * @return
      */
-    public static <T> JsonData buildSuccess(T data) {
-        return new JsonData(0, data, null);
+    public static <T> JSonData buildSuccess(T data) {
+        return new JSonData(0, data, null);
     }
 
     /**
@@ -51,8 +51,8 @@ public class JsonData<T> {
      * @param msg
      * @return
      */
-    public static JsonData buildError(String msg) {
-        return new JsonData(-1, null, msg);
+    public static JSonData buildError(String msg) {
+        return new JSonData(-1, null, msg);
     }
 
 
@@ -63,8 +63,8 @@ public class JsonData<T> {
      * @param msg
      * @return
      */
-    public static JsonData buildCodeAndMsg(int code, String msg) {
-        return new JsonData(code, null, msg);
+    public static JSonData buildCodeAndMsg(int code, String msg) {
+        return new JSonData(code, null, msg);
     }
 
     /**
@@ -73,8 +73,8 @@ public class JsonData<T> {
      * @param codeEnum
      * @return
      */
-    public static JsonData buildResult(BizCodeEnum codeEnum) {
-        return JsonData.buildCodeAndMsg(codeEnum.getCode(), codeEnum.getMessage());
+    public static JSonData buildResult(BizCodeEnum codeEnum) {
+        return JSonData.buildCodeAndMsg(codeEnum.getCode(), codeEnum.getMessage());
     }
 }
 
