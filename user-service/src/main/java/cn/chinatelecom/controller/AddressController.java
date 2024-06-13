@@ -2,6 +2,7 @@ package cn.chinatelecom.controller;
 
 
 import cn.chinatelecom.enums.BizCodeEnum;
+import cn.chinatelecom.exceptions.BizException;
 import cn.chinatelecom.models.AddressVO;
 import cn.chinatelecom.service.AddressService;
 import cn.chinatelecom.util.JSonData;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author Bruce Zhou
@@ -29,12 +30,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class AddressController {
     @Autowired
     private AddressService addressService;
-    @ApiOperation(value="Get Address By adress id")
+
+    @ApiOperation(value = "Get Address By adress id")
     @GetMapping("find/{address_id}")
-    public JSonData<AddressVO> detail(@ApiParam(value="Address id",required = true)
-                                          @PathVariable("address_id") Long id){
+    public JSonData<AddressVO> detail(@ApiParam(value = "Address id", required = true)
+                                      @PathVariable("address_id") Long id) {
         AddressVO addressvO = addressService.detail(id);
-        return addressvO!=null ? JSonData.buildSuccess(addressvO): JSonData.buildResult(BizCodeEnum.ADDRESS_NOT_EXIST);
+
+
+        return addressvO != null ? JSonData.buildSuccess(addressvO) : JSonData.buildResult(BizCodeEnum.ADDRESS_NOT_EXIST);
     }
 }
 
