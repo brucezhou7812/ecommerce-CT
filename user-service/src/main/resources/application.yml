@@ -10,6 +10,21 @@ spring:
     username: root
     password: 12345678
 
+  redis:
+    host: 47.92.171.110
+    password: 123456
+    port: 8000
+
+  mail:
+    host: smtp.189.cn
+    password: Xu$0Ja@7y#1Sz#7H
+    username: 18911717812@189.cn
+    from: 18911717812@189.cn
+    properties.mail.smtp.starttls.enable: true
+    properties.mail.smtp.starttls.required: true
+    properties.mail.smtp.ssl.enable: true
+    default-encoding: UTF-8
+
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

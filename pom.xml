@@ -33,7 +33,8 @@
         <commons.lang3.version>3.9</commons.lang3.version>
         <commons.codec.version>1.15</commons.codec.version>
         <springfox.boot.starter.version>3.0.0</springfox.boot.starter.version>
-
+        <google.kaptcha.version>1.1.0</google.kaptcha.version>
+        <mail.version>2.3.3.RELEASE</mail.version>
         <docker.image.prefix>ecommerce-CT-cloud</docker.image.prefix>
 
         <!--跳过单元测试-->
@@ -115,6 +116,18 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-boot-starter</artifactId>
                 <version>${springfox.boot.starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>kaptcha-spring-boot-starter</artifactId>
+                <version>${google.kaptcha.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
+                <version>${mail.version}</version>
             </dependency>
 
 

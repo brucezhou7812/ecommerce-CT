@@ -1,4 +1,4 @@
-package cn.chinatelecom.util;
+package cn.chinatelecom.utils;
 
 import cn.chinatelecom.enums.BizCodeEnum;
 import lombok.AllArgsConstructor;

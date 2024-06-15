@@ -1,6 +1,6 @@
 package cn.chinatelecom.exceptions;
 
-import cn.chinatelecom.util.JSonData;
+import cn.chinatelecom.utils.JSonData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

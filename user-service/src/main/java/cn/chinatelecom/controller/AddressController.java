@@ -2,10 +2,9 @@ package cn.chinatelecom.controller;
 
 
 import cn.chinatelecom.enums.BizCodeEnum;
-import cn.chinatelecom.exceptions.BizException;
 import cn.chinatelecom.models.AddressVO;
 import cn.chinatelecom.service.AddressService;
-import cn.chinatelecom.util.JSonData;
+import cn.chinatelecom.utils.JSonData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
